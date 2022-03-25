@@ -6,8 +6,10 @@ import { RestaurantsController } from './restaurants/restaurants.controller';
 import { RestaurantSchema, Restaurant } from './restaurants/restaurants.schema';
 import { RestaurantService } from './restaurants/restaurants.service';
 
+const mongourl = 'mongodb+srv://testrestaurants:Qjq2qOV8pk3HNpGH@cluster0.zjgwy.mongodb.net/new_york';
+
 @Module({
-  imports: [MongooseModule.forRoot('mongodb://localhost:27017/new_york'),
+  imports: [MongooseModule.forRoot(mongourl),
     MongooseModule.forFeature([{name: Restaurant.name, schema: RestaurantSchema}])
 ],
   controllers: [AppController, RestaurantsController],

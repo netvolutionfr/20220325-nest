@@ -14,4 +14,12 @@ export class RestaurantService {
             "address.street": "5 Avenue"
         }).exec();
     }
+
+    async getRestaurant(id: string): Promise<RestaurantDocument> {
+        return await this.restaurantModel.findById(id).exec();
+    }
+
+    async createRestaurant(restaurant: Restaurant): Promise<RestaurantDocument> {
+        return await this.restaurantModel.create(restaurant);
+    }
 }

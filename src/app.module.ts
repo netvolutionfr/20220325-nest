@@ -7,6 +7,9 @@ import { RestaurantSchema, Restaurant } from './restaurants/restaurants.schema';
 import { RestaurantService } from './restaurants/restaurants.service';
 import { ConfigModule } from '@nestjs/config';
 
+// TODO: configure mongoose with config service module
+// https://javascript.plainenglish.io/build-a-server-side-app-with-typescript-nestjs-and-mongodb-d29d26ac1ab3
+
 const mongourl = process.env.MONGODB_URI || 'mongodb://localhost:27017/restaurants';
 @Module({
   imports: [ConfigModule.forRoot(),
